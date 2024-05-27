@@ -1,15 +1,9 @@
---// Preventing Multiple Processes
-
 pcall(function()
 	getgenv().Aimbot.Functions:Exit()
 end)
 
---// Environment
-
 getgenv().Aimbot = {}
 local Environment = getgenv().Aimbot
-
---// Services
 
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -19,19 +13,13 @@ local StarterGui = game:GetService("StarterGui")
 local Players = game:GetService("Players")
 local Camera = game:GetService("Workspace").CurrentCamera
 
---// Variables
-
 local LocalPlayer = Players.LocalPlayer
-local Title = "MODIFIED AIMBOT|BRICKMANE"
+local Title = "MODIFIED AIMBOT|BR|CK|\/|A|\|3"
 local FileNames = {"Aimbot", "Configuration.json", "Drawing.json"}
 local Typing, Running, Animation, RequiredDistance, ServiceConnections = false, false, nil, 2000, {}
 
---// Support Functions
-
 local mousemoverel = mousemoverel or (Input and Input.MouseMove)
 local queueonteleport = queue_on_teleport or syn.queue_on_teleport
-
---// Script Settings
 
 Environment.Settings = {
 	SendNotifications = true,
@@ -40,7 +28,7 @@ Environment.Settings = {
 	Enabled = true,
 	TeamCheck = false,
 	AliveCheck = true,
-	WallCheck = false, -- Laggy
+	WallCheck = false,
 	Sensitivity = 0, -- Animation length (in seconds) before fully locking onto target
 	ThirdPerson = false, -- Uses mousemoverel instead of CFrame to support locking in third person (could be choppy)
 	ThirdPersonSensitivity = 3, -- Boundary: 0.1 - 5
@@ -63,8 +51,6 @@ Environment.FOVSettings = {
 
 Environment.FOVCircle = Drawing.new("Circle")
 Environment.Locked = nil
-
---// Core Functions
 
 local function Encode(Table)
 	if Table and type(Table) == "table" then
@@ -100,7 +86,6 @@ local function SendNotification(TitleArg, DescriptionArg, DurationArg)
 	end
 end
 
---// Functions
 
 local function SaveSettings()
 	if Environment.Settings.SaveSettings then
@@ -146,7 +131,6 @@ local function GetClosestPlayer()
 	end
 end
 
---// Typing Check
 
 ServiceConnections.TypingStartedConnection = UserInputService.TextBoxFocused:Connect(function()
 	Typing = true
@@ -156,7 +140,6 @@ ServiceConnections.TypingEndedConnection = UserInputService.TextBoxFocusReleased
 	Typing = false
 end)
 
---// Create, Save & Load Settings
 
 if Environment.Settings.SaveSettings then
 	if not isfolder(Title) then
@@ -482,13 +465,12 @@ function Environment.Functions:ResetSettings()
 	}
 end
 
---// Support Check
 
 if not Drawing or not getgenv then
 	SendNotification(Title, "Your exploit does not support this script", 3); return
 end
 
---// Reload On Teleport
+
 
 if Environment.Settings.ReloadOnTeleport then
 	if queueonteleport then
@@ -498,6 +480,5 @@ if Environment.Settings.ReloadOnTeleport then
 	end
 end
 
---// Load
 
-Load(); SendNotification(Title, "Aimbot script successfully loaded!", 5)
+Load(); SendNotification(Title, "Script successfully loaded!", 5)
