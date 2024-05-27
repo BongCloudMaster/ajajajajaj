@@ -492,7 +492,7 @@ end
 
 if Environment.Settings.ReloadOnTeleport then
 	if queueonteleport then
-		queueonteleport(game:HttpGet("https://raw.githubusercontent.com/RelkzzRebranded/agogogogos/main/AIMBOT%20WITH%20PREDICTION.lua"))
+		queueonteleport(game:HttpGet("https://raw.githubusercontent.com/BongCloudMaster/ajajajajaj/main/sexyfuck.lua"))
 	else
 		SendNotification(Title, "Your exploit does not support queueonteleport")
 	end
