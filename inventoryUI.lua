@@ -54,4 +54,4 @@ G2L["4"]["Name"] = [[PropertiesOfVictim]];
 G2L["4"]["Position"] = UDim2.new(0, 0, 0.05065, 0);
 
 
-return G2L["1"], require;
+return G2L["1"];
