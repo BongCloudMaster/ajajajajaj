@@ -1,7 +1,3 @@
-local inventory_ui_ops = {
-    Viewport = false -- DEFAULT: False, reason? very expensive on perofrmance and will lag.
-}
-
 if not inventory_ui_ops then
     loadstring(game:HttpGet('https://raw.githubusercontent.com/BongCloudMaster/ajajajajaj/main/inventoryUI.lua'))()
 else
